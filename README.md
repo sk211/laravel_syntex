@@ -1,9 +1,9 @@
 # laravel_syntex
 
-<h3>Route Definitions
-</h3>
+<h1>Route Definitions
+</h1>
 
-<h4>Bacis rotute</h4>
+<h1>Bacis rotute</h1>
 <pre>
 
 
@@ -14,7 +14,7 @@ return 'Hello, World!';
 });
 
 </pre>
-<h4>Sample website route here</h4>
+<h1>Sample website route here</h1>
 <pre>
     Route::get('/', function () {
         return view('welcome');
@@ -29,7 +29,7 @@ return 'Hello, World!';
         return view('services');
         });
 </pre>
-<h4>Type of route here / rotuer verbs</h4>
+<h1>Type of route here / rotuer verbs</h1>
 <pre>
 
 
@@ -43,7 +43,7 @@ return 'Hello, World!';
         Route::match(['get', 'post'], '/', function () {});
     
 </pre>
-<h4>ROute Handling Routes or calling controller methods</h4>
+<h1>ROute Handling Routes or calling controller methods</h1>
 
 
 <pre>
@@ -51,7 +51,7 @@ return 'Hello, World!';
  
 </pre>
 
-<h4>Route paremanters</h4>
+<h1>Route paremanters</h1>
 
 <pre>
     Route::get('users/{id}/friends', function ($id) {
@@ -68,8 +68,8 @@ return 'Hello, World!';
         
 </pre>
 
-<h4>Regular expression route constraints
-</h4>
+<h1>Regular expression route constraints
+</h1>
 
 <pre>
     Route::get('users/{id}', function ($id) {
@@ -83,7 +83,7 @@ return 'Hello, World!';
         })->where(['id' => '[0-9]+', 'slug' => '[A-Za-z]+']);
 </pre>
 
-<h4>Route Names</h4>
+<h1>Route Names</h1>
 <pre>// Defining a route with name in routes/web.php:
     Route::get('members/{id}', 'MembersController@show')->name('members.show');
     // Link the route in a view using the route() helper
@@ -96,7 +96,7 @@ return 'Hello, World!';
         // outputs <a href="http://myapp.com/">
 </pre>
 
-<h3>Router Name conventions</h3>
+<h1>Router Name conventions</h1>
 
 <pre>
     Photos.index
@@ -110,7 +110,7 @@ return 'Hello, World!';
 </pre>
 
 <!-- 2nd day -->
-<h4>PASSING ROUTE PAR AMETER S TO THE ROUTE() HELPER</h4>
+<h1>PASSING ROUTE PAR AMETER S TO THE ROUTE() HELPER</h1>
 
 <p>When your route has parameters (e.g., users/{id}), you need to define those parameters when you’re using the route() helper to generate a link to the route. There are a few different ways to pass these parameters. Let’s imagine a route defined as users/{userId}/comments/{commentId}.
     If the user ID is 1 and the comment ID is 2, let’s look at a few options we have available to us:</p>

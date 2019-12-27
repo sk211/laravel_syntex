@@ -1,5 +1,3 @@
-# laravel_syntex
-
 <h1>Route Definitions
 </h1>
 
@@ -126,3 +124,123 @@ return 'Hello, World!';
     // http://myapp.com/users/1/comments/2
     Option 4:
     route('users.comments.show', ['userId' => 1, 'comme</pre>
+
+<h1>Route group</h1>
+<h3>Defining a route group</h3>
+<pre>
+    Route::group([], function () {
+        Route::get('hello', function () {
+        return 'Hello';
+        });
+        Route::get('world', function () {
+        return 'World';
+        });
+        });
+        
+        
+    </pre>
+<h1>APPLYING MIDDLEWARE IN CONTROLLERS
+</h1>
+<h6>
+    <pre>class DashboardController extends Controller
+        {
+        public function __construct()
+        {
+        $this->middleware('auth');
+        $this->middleware('admin-auth')
+        ->only('admin');
+        $this->middleware('team-member')
+        ->except('admin');
+        }
+        }
+        </pre>
+</h6>
+
+<h1>Path Prefixes</h1>
+<p>If you have a group of routes that share a segment of their path — for example, if your site’s API is prefixed with /api — you can use route groups to simplify this structure</p>
+<h6>
+    <pre>Route::group(['prefix' => 'api'], function () {
+        Route::get('/', function () {
+        // Handles the path /api
+        });
+        Route::get('users', function () {
+        // Handles the path /api/users
+        });
+        });
+        </pre>
+</h6>
+
+<h1>Subdomain Routing</h1>
+<p>Subdomain routing is the same as route prefixing, but it’s scoped by subdomain instead of route prefix. There are two primary uses for this. First, you may want to present different sections of the application (or entirely different applications) to different
+    subdomains. Example 3-13 shows how you can achieve this.
+</p>
+<h6>
+    <pre>
+        Route::group(['domain' => 'api.myapp.com'], function () {
+            Route::get('/', function () {
+            //
+            });
+            });
+    </pre>
+</h6>
+<h2> Parameterized subdomain routing</h2>
+
+
+<h6>
+    <pre>
+        Route::group(['domain' => '{account}.myapp.com'], function () {
+            Route::get('/', function ($account) {
+            //
+            });
+            Route::get('users/{id}', function ($account, $id) {
+            //
+            });
+            });
+    </pre>
+</h6>
+<h1>Route group name prefixes
+</h1>
+
+<h6>
+    <pre>
+        Route::group(['as' => 'users.', 'prefix' => 'users'], function () {
+            Route::group(['as' => 'comments.', 'prefix' => 'comments'], function () {
+            // Route name will be users.comments.show
+            Route::get('{id}', function () {
+            //
+            })->name('show');
+            });
+            });
+    </pre>
+</h6>
+
+<h1 class="text-center "> Chapter -4 Views</h1>
+<h1>Load views</h1>
+<h1>THREE WAYS TO LOAD A VIEW()</h1>
+<h2>Simple view() usage</h2>
+<h6>
+    <pre>Route::get('/', function () {
+        return view('home');
+        });</pre>
+</h6>
+<h1> Passing variables to views</h1>
+<h6>
+    <pre>
+        Route::get('tasks', function () {
+            return view('tasks.index')
+            ->with('tasks', Task::all());
+            });
+            
+    </pre>
+</h6>
+<h1>Using View Composers to Share Variables with Every View
+
+</h1>
+<h6>
+    <pre>
+        view()->share('variableName', 'variableValue');
+    </pre>
+</h6>
+
+<h1>contorollers</h1>
+<img src="https://i.stack.imgur.com/4qglC.png" alt="">

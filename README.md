@@ -85,12 +85,12 @@ return 'Hello, World!';
 <pre>// Defining a route with name in routes/web.php:
     Route::get('members/{id}', 'MembersController@show')->name('members.show');
     // Link the route in a view using the route() helper
-    <a href="<?php echo route('members.show', ['id' => 14]); ?>">
+    <a href="@php echo route('members.show', ['id' => 14]); ?>">
     </pre>
 
 <h5>Rul helper</h5>
 <pre>
-    <a href="<?php echo url('/'); ?>">
+    <a href="@php echo url('/'); ?>">
         // outputs <a href="http://myapp.com/">
 </pre>
 
@@ -279,7 +279,7 @@ public function home()
 {
 return 'Hello, World!';
 }
-}
+};
 
     </h4>
 </pre>

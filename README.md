@@ -244,3 +244,42 @@ return 'Hello, World!';
 
 <h1>contorollers</h1>
 <img src="https://i.stack.imgur.com/4qglC.png" alt="">
+
+<h1>make a controller on Artisan command line</h1>
+
+<pre>
+    <h4>php artisan make:controller TasksController</h4>
+</pre>
+
+<h1>Default generated controller</h1>
+
+<pre>
+    <h4>
+        <?php
+namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use App\Http\Requests;
+class TasksController extends Controller
+{
+}
+
+    </h4>
+</pre>
+<h1>
+    simple controller example
+
+</h1>
+<pre>
+    <h4>
+        <?php
+use App\Http\Controllers\Controller;
+class TasksController extends Controller
+{
+public function home()
+{
+return 'Hello, World!';
+}
+}
+
+    </h4>
+</pre>
